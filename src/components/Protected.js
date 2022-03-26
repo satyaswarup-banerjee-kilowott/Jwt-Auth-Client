@@ -17,7 +17,7 @@ function Protected() {
             console.log(res)
         }).catch(err => {
             console.log(err);
-            navigate('/login')
+            navigate('/')
         })
     }, [])
 
@@ -25,7 +25,7 @@ function Protected() {
     const logout = () => {
         
         sessionStorage.clear();
-        navigate('/login')
+        navigate('/')
 
     }
     return (

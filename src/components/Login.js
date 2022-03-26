@@ -5,6 +5,7 @@ import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@materia
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import Notification from './Notification';
 
 
     const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
@@ -15,6 +16,7 @@ function Login() {
     let navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [notify,setNotify] = useState({isOpen:false, message:'', type:''})
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
@@ -27,18 +29,22 @@ function Login() {
             navigate('/protected')
         }).catch(err => {
             console.log(err);
-            navigate('/login')
+            navigate('/')
         })
     }, [])
 
     const submit = () => {
         console.log(username, password)
         axios.post("https://jwt-auth-kilowott.herokuapp.com/login", { username, password }).then(user => {
-            console.log(user);
             sessionStorage.setItem('token', user.data.token)
             navigate('/protected')
         }).catch(err => {
             console.log(err);
+            setNotify({
+                isOpen:true,
+                message:'Unauthorized',
+                type: 'error'
+            })
         })
     }
 
@@ -79,7 +85,13 @@ function Login() {
                 </Link>
                 </Typography>
             </Paper>
+            <Notification
+            notify={notify}
+            setNotify={setNotify}
+        
+        />
         </Grid>
+        
     )
 }
 

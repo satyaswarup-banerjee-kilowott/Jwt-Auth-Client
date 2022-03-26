@@ -1,6 +1,6 @@
 {
   "name": "jwt-auth",
-  "homepage": "https://satyaswarup-banerjee-kilowott.github.io/Jwt-Auth-Client/login",
+  "homepage": "login",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

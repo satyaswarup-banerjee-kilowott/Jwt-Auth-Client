@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Jwt-Auth-Client/login/static/css/main.e6c13ad2.css",
+    "main.js": "/Jwt-Auth-Client/login/static/js/main.76105224.js",
+    "static/js/787.c8fa1279.chunk.js": "/Jwt-Auth-Client/login/static/js/787.c8fa1279.chunk.js",
+    "index.html": "/Jwt-Auth-Client/login/index.html",
+    "main.e6c13ad2.css.map": "/Jwt-Auth-Client/login/static/css/main.e6c13ad2.css.map",
+    "main.76105224.js.map": "/Jwt-Auth-Client/login/static/js/main.76105224.js.map",
+    "787.c8fa1279.chunk.js.map": "/Jwt-Auth-Client/login/static/js/787.c8fa1279.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.76105224.js"
+  ]
+}

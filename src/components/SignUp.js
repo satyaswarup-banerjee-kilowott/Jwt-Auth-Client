@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import Notification from './Notification';
@@ -12,7 +13,7 @@ const marginTop = { marginTop: 8 }
 
  function Signup() {
 
-    
+    let navigate = useNavigate();
     const [notify,setNotify] = useState({isOpen:false, message:'', type:''})
 
     const initialValuesCreate = {
@@ -46,7 +47,12 @@ const marginTop = { marginTop: 8 }
                 message:'Succesfully signed up',
                 type: 'success'
             })
+            setTimeout(() =>{
 
+                navigate('/')
+
+            },2000)
+            
             }).catch(err => {
             console.log(err);
             setNotify({
